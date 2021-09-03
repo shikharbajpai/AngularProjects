@@ -1,0 +1,37 @@
+<h2 style="text-align: center;">Directives</h2>
+
+<h2>"ngIf"Statement</h2>
+
+<h3 *ngIf="displayHeading1; else elseBlock1">
+    "If" statement in "thenBlock" reference variable appears when "displayHeading1 = true".</h3>
+
+<ng-template #elseBlock1>
+    <h3>"else" statement in "elseBlock" reference variable appears when "displayHeading1 = false".
+    </h3>
+</ng-template>
+
+<div *ngIf="displayHeading2; then thenBlock else elseBlock2"></div>
+
+<ng-template #thenBlock>
+    <h3>"If" statement in "thenBlock" reference variable appears when "displayHeading2 = true".</h3>
+</ng-template>
+
+<ng-template #elseBlock2>
+    <h3>"else" statement in "elseBlock" reference variable appears when "displayHeading2 = false".</h3>
+</ng-template>
+
+<br>
+<h2>"ngSwitch" Statement</h2>
+
+<div [ngSwitch]="color">
+    <h3 *ngSwitchCase='"red"'>You picked up red color.</h3>
+    <h3 *ngSwitchCase='"blue"'>You picked up blue color.</h3>
+    <h3 *ngSwitchCase='"green"'>You picked up green color.</h3>
+    <h3 *ngSwitchDefault>Pick Again</h3>
+</div>
+
+<br>
+<h2>"ngFor" Statement ----</h2>
+<div *ngFor="let course of courses; index as i; first as f; last as l; odd as o; even as e">
+    <h3>{{i}} - {{f}} - {{l}} - {{o}} - {{e}} - {{course}}</h3>
+</div>

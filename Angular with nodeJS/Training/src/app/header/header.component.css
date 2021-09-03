@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: black; */
+    
+}
+.background{
+    background: rgba(0,0,0,0.8);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.navbar ul{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.navbar ul li {
+    list-style: none;
+    /* background: cornflowerblue; */
+    padding: 26px 30px;
+    cursor: pointer;
+
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+.navbar li a:hover{
+    text-decoration: underline;
+    color: rgba(32, 3, 3, 0.158);
+
+}
+.rightNav{
+    width: 50%;
+    /* background: blueviolet; */
+    text-align: right;
+    padding: 0px 23px;
+
+}
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid gray;
+    border-radius: 9px;
+    outline: none;
+}
+
+.btn{
+    padding: 6px 10px;
+    margin: 7px 3px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+}
+.btn:hover{
+    background: burlywood;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1170px) {
+    .navbar{
+        flex-direction: column;
+        
+    }
+    .navbar ul{
+        flex-direction: column;
+    }
+    .h-nav-resp{
+        height: 447px;
+    }
+    .rightNav{
+        text-align: center;
+    }
+}

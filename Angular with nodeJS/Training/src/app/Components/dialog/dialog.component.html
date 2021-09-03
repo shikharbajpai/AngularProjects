@@ -1,0 +1,215 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Registration Form</mat-card-title>
+    <span class="fill-remaining-space"></span>
+    <button mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-card-subtitle>Personal Details</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="profileForm">
+
+      <mat-grid-list cols="2" rowHeight="100px">
+
+        <!-- firstName -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstName">
+            <mat-error *ngIf="profileForm.get('firstName').hasError('required')">First Name is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('firstName').hasError('maxlength')">Maximum 10 Characters
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('firstName').hasError('minlength')">Minimum 3 Characters
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('firstName').hasError('pattern')">Invalid Character
+            </mat-error>
+            <mat-hint>Maximum 10 Characters</mat-hint>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- middleName -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Middle Name</mat-label>
+            <input matInput placeholder="Middle Name" formControlName="middleName">
+            <mat-error *ngIf="profileForm.get('middleName').hasError('pattern')">Invalid Character
+            </mat-error>
+            <mat-hint>Maximum 10 Characters</mat-hint>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- lastName -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" formControlName="lastName">
+            <mat-error *ngIf="profileForm.get('lastName').hasError('required')">Last Name is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('lastName').hasError('maxlength')">Maximum 10 Characters
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('lastName').hasError('minlength')">Minimum 3 Characters
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('lastName').hasError('pattern')">Invalid Character
+            </mat-error>
+            <mat-hint>Maximum 10 Characters</mat-hint>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- email -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email@domain.com" formControlName="email">
+            <mat-error *ngIf="profileForm.get('email').hasError('required')">Email is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('email').hasError('email')">Enter Valid Email
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- mobile  -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput type="tel" placeholder="555-555-1234" formControlName="mobile">
+            <mat-error *ngIf="profileForm.get('mobile').hasError('required')">Mobile Number is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('mobile').hasError('maxlength')">10 Digits Required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('mobile').hasError('minlength')">10 Digits Required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('mobile').hasError('pattern')">Invalid Numericals
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- dateOfBirth -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput placeholder="01/01/2001" formControlName="dateOfBirth">
+            <mat-error *ngIf="profileForm.get('dateOfBirth').hasError('required')">DateOfBirth is required
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- address -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Ex. 100 Main St" formControlName="address">
+            <mat-error *ngIf="profileForm.get('address').hasError('required')">Address is required
+            </mat-error>
+
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- state -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state" (selectionChange)="pushCities($event.value)" required>
+              <!-- <mat-option value="default">Select</mat-option> -->
+              <mat-option [value]="state" *ngFor="let state of stateList">{{state}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="profileForm.get('state').hasError('required')">State is required
+            </mat-error>
+          </mat-form-field>
+
+        </mat-grid-tile>
+
+        <!-- city -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city">
+              <!-- <mat-option value="default">Select</mat-option> -->
+              <mat-option [value]="c" *ngFor="let c of city">{{c}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="profileForm.get('city').hasError('required')">City is required
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- zip -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Zip</mat-label>
+            <input matInput placeholder="878967" tel="number" formControlName="zip">
+            <mat-error *ngIf="profileForm.get('zip').hasError('required')">Postal Code is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('zip').hasError('maxlength')">Maximum 6 Digits is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('zip').hasError('minlength')">Minimum 6 Digits is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('zip').hasError('pattern')">Invalid Numericals
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- gender -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+            </mat-select>
+            <mat-error *ngIf="profileForm.get('gender').hasError('required')">Gender is required
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- role -->
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Role</mat-label>
+            <input matInput placeholder="Role" formControlName="role">
+            <mat-error *ngIf="profileForm.get('role').hasError('required')">Role is required
+            </mat-error>
+            <mat-error *ngIf="profileForm.get('role').hasError('pattern')">Invalid Character
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <!-- highestQualification -->
+        <mat-grid-tile>
+          <mat-form-field>
+            <mat-label>Highest Qualification</mat-label>
+            <mat-select formControlName="qualification">
+              <mat-option [value]="class" *ngFor="let class of classes">{{class}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+
+      <!-- interested -->
+
+      <mat-label> Are You Interested? </mat-label>
+      <mat-radio-group aria-label="Select an option" formControlName="interested">
+        <mat-radio-button value=" Yes "> Yes </mat-radio-button>
+        &nbsp;
+        <mat-radio-button value=" No "> No </mat-radio-button>
+      </mat-radio-group>
+
+      <!-- <mat-grid-tile>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-grid-tile> -->
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary">submit</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,40 @@
+<h2 class="brown">limit and substr() : Custom Pipe</h2>
+<h2>Using limit functionality: {{example | custom : 5}}</h2>
+<h2>
+  <ol>
+    <li *ngFor="let player of playerArr">{{player | custom : 8}}</li>
+  </ol>
+</h2>
+
+<br>
+
+<h2 class="crimson">filter : Custom Pipe</h2>
+<div class="row justify-content-center">
+  <div class="col-md-8 mb-2">
+    <div class="form-group">
+      <input type="text" class="form-control" id="search" placeholder="Search Candidate by Skill Set"
+        [(ngModel)]="searchHere">
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Candidate Name</th>
+          <th scope="col">Skill Set</th>
+          <th scope="col">Experience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let skill of skillArr | filter : searchHere">
+          <th scope="row">{{skill.sno}}</th>
+          <td>{{skill.name}}</td>
+          <td>{{skill.skill}}</td>
+          <td>{{skill.experience}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

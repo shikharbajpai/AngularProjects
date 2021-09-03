@@ -1,0 +1,44 @@
+<div>
+  <h1>
+    Basic Use of : {{interpolation}}
+  </h1>
+</div>
+
+<h3>Using Property Binding Interpolation and Event Binding technique with "$event"</h3>
+<input [disabled]="true" [value]="demo" type="text">
+<button (click)="aboutClick($event)">search</button>
+<p>The type of event is : {{typeOfEvent}}</p>
+
+<br>
+
+<h3>Using Property Binding Interpolation and Event Binding technique by inserting value in typescript component </h3>
+<input [value]="byDefaultWritten" type="text" placeholder="Search Here">
+<button (click)="onClick()">search</button>
+<p>This is an interpolation through click event : {{greeting}}</p>
+
+<br>
+
+<h3>Using Interpolation, Property Binding and Event Binding using Template Reference Variable</h3>
+<input [value]="searchList" type="text" placeholder="Search Here" #searchInput>
+<button (click)="variousInput(searchInput.value)">search</button>
+<p>The Searched Item is : {{searched}}</p>
+
+<h3>Using Event Binding</h3>
+<button value="Button1" (click)="buttonClicked($event)">Button1</button>
+<br>
+<br>
+<button value="Button2" (click)="buttonClicked($event)">Button2</button>
+<br>
+<br>
+<button value="Button3" (click)="buttonClicked($event)">Button3</button>
+<br>
+<br>
+<button (mouseover)="onButtonMouseOver()">Search</button>
+
+<p>The button Clicked is: {{buttonNumber}}</p>
+<br>
+
+<h3>One of Many types of Event binding : keyUp Binding.</h3>
+<h3>It uses a method that inside interpolation we use plural variable.</h3>
+<input type="text" (keyup)="onKey($event)">
+<p>This is a keyup event. It display the text written in input tag : {{values}}</p>

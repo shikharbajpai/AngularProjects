@@ -1,0 +1,12 @@
+<div class="my-3">
+  <h5 [ngClass]="{'strike': !todoItem.active}">{{i+1}}. {{todoItem.title}}</h5>
+  <p [ngClass]="{'strike': !todoItem.active}">{{todoItem.desc}}</p>
+
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="marked{{i}}" (click)="onCheckBoxClick(todoItem)"
+      [checked]="!todoItem.active">
+    <label class="form-check-label" for="marked{{i}}">Done</label>
+  </div>
+  <button class="btn btn-sm btn-danger" (click)="onClick(todoItem)">Delete</button>
+
+</div>

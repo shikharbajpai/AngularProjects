@@ -1,0 +1,98 @@
+<div class="container-fluid">
+  <h2>Reactive Form Template</h2>
+  <br>
+  <!-- <div class="alert alert-danger" *ngIf = "errorMsg"></div>
+    <br>
+    {{errorMsg}} -->
+
+  <!-- {{registrationForm.value | json}}  -->
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+
+      <label for="name">Username</label>
+      <input type="text" id="name" class="form-control" formControlName="userName" [class.is-invalid]="registrationForm.get('userName').invalid &&
+            registrationForm.get('userName').touched">
+
+      <!-- <small [class.d-none]="registrationForm.get('userName').valid ||registrationForm.get('userName').untouched" class="text-danger" >Username is required.</small> -->
+
+      <div *ngIf="registrationForm.get('userName').invalid && registrationForm.get('userName').touched">
+
+        <small class="text-danger" *ngIf="registrationForm.get('userName').errors?.required">Username is
+          required</small>
+
+        <small class="text-danger" *ngIf="registrationForm.get('userName').errors?.minlength">Username must be at least
+          three characters</small>
+
+        <small class="text-danger" *ngIf="registrationForm.get('userName').errors?.forbiddenName">
+          {{registrationForm.get('userName').errors?.forbiddenName.value}} Username not allowed</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+
+      <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addAlternativeEmail()">Add e-mail</button>
+
+      <input type="email" id="email" class="form-control" formControlName="email" [class.is-invalid]="registrationForm.get('email').invalid &&
+          registrationForm.get('email').touched">
+
+      <small [class.d-none]="registrationForm.get('email').valid || registrationForm.get('email').untouched"
+        class="text-danger">Email is required.</small>
+      <div formArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls; let i = index">
+        <input type="text" class="form-control my-1" [formControlName]="i">
+
+      </div>
+    </div>
+    <br>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" id="offers" class="form-check-input" formControlName="subscribe">
+      <label for="offers" class=form-check-label>Send me promotional offers</label>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword"> Confirm Password</label>
+      <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword"
+        [class.is-invalid]="registrationForm.errors?.misMatch">
+      <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not Match</small>
+    </div>
+
+    <div formGroupName="address">
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" formControlName="city">
+        <div *ngIf="addressGroup.controls['city'].invalid && addressGroup.controls['city'].touched">
+          <small class="text-danger" *ngIf="addressGroup.controls['city'].errors?.required">City is
+            required</small>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" formControlName="state">
+      </div>
+
+      <div class="form-group">
+        <label for="postalCode">Postal Code</label>
+        <input type="phone" class="form-control" id="postalCode" formControlName="postalCode">
+      </div>
+    </div>
+
+    <br>
+
+    <button [disabled]='!registrationForm.valid' class="btn btn-primary" type="submit">Register</button>
+    <br>
+    <br>
+    <button class="btn btn-secondary ml-2" type="button" (click)="loadApiData()">Load API Data</button>
+  </form>
+
+
+</div>

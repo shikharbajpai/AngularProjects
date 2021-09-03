@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* Default CSS Style */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Account-Page */
+
+.underlineHover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+  .underlineHover:hover {
+    color: #0d0d0d;
+  }
+  
+  .underlineHover:hover:after{
+    width: 100%;
+  }
+
+form .btn{
+    width: 69%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+form .btn:focus{
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+form a{
+    font-size: 12px;
+}
+
+.btn{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 2px solid #ffd6d6;
+}
+
+.btn:hover{
+    background: #563434;
+}

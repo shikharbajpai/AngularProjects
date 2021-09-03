@@ -1,0 +1,37 @@
+
+<mat-card class="example-card">
+    <mat-card-title>Edit or Update Element</mat-card-title>
+  
+    <mat-card-content>
+  
+      <form [formGroup]="editElementForm">
+
+        <div class="form-group">
+          <mat-form-field appearance="outline" >
+            <mat-label>Enter the Element Name</mat-label>
+            <input type="text" matInput formControlName="name">
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter Element Weight</mat-label>
+            <input matInput formControlName="Weight">
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Enter the Element Symbol</mat-label>
+              <input type="text" matInput formControlName="Symbol">
+            </mat-form-field>
+          </div>
+  
+        <div class="button">
+          <button type="submit" class="btn" mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+        </div>
+  
+      </form>
+    </mat-card-content>
+  
+  </mat-card>

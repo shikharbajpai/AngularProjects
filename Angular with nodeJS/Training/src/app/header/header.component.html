@@ -1,0 +1,23 @@
+<nav class="navbar background h-nav-resp">
+    <ul>
+
+        <li><a routerLink="/section">Home</a></li>
+        <li><a routerLink="/binding">Bindings</a></li>
+        <li><a routerLink="/template-form">Template Form</a></li>
+        <li><a routerLink="/reactive-form">Reactive Form</a></li>
+        <li><a routerLink="/directives">Directives</a></li>
+        <li><a (click)="openDialog()">Dialog</a></li>
+        <li><a routerLink="/userInfo">User Info</a></li>
+
+
+    </ul>
+    <div class="rightNav">
+        <input type="text" name="search" id="search" placeholder="Search Here" #searchBar
+        [value]="searchText">
+        <button class="btn" (click) = "onClick(searchBar.value)">Search</button>
+        <button class="btn" (click)="logout()">LogOut</button>
+
+
+    </div>
+</nav>
+

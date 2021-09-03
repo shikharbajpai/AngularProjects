@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* Default CSS Style */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;  
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation Bar with Logo and Links */
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: sticky; */
+    top: 0px;
+    cursor: pointer;
+    padding: 20px;
+    background: radial-gradient(#fff, #ffd6d6);
+    /* border: 2px solid red; */
+}
+
+.logo{
+    width: 50%;
+    margin-left: 25px;
+}
+.nav-list{
+    width: 50%;
+    text-align: right;
+}
+.nav-list ul{
+    display: flex;
+    list-style: none;
+    margin-left: 172px;
+}
+.nav-list ul li{
+    margin-right: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+}
+
+.cartLogo{
+    margin-right: 25px;
+}
+
+/* Header Section with Image and Button */
+
+.firstSection{
+    /* max-width: 1300px; */
+    margin:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: radial-gradient(#fff, #ffd6d6);
+    /* border: 2px solid purple; */
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0px;
+}
+
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0px;
+}
+
+.col-2 p{
+    color: #555;
+}
+
+.btn{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 2px solid #ffd6d6;
+}
+
+.btn:hover{
+    background: #563434;
+}
+
+/* Categories Section with three Images */
+
+.categoriesSection{
+    margin: 70px 0px;
+    /* border: 2px solid red; */
+}
+
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.col-3 img{
+    width: 100%;
+}
+
+/* Featured Products Section with four Images */
+
+/* .small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} */
+
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+
+.col-4 img{
+    width: 100%;
+}
+
+.col-4:hover{
+    transform: translateY(-5px);
+}
+
+.productSectionTitle{
+    text-align: center;
+    margin: 0px auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+.productSectionTitle::after{
+    content: "";
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.productTitle{
+    color: #555;
+    font-weight: normal;
+}
+.productPrice{
+    font-size: 14px;
+}
+.rating .fa{
+    color: #ff523b;
+}
+
+/* Featured Products Section with four Images */
+
+.offerSection{
+    background: radial-gradient(#fff, #ffd6d6);
+    margin-top: 80px;
+    padding: 30px 0px;
+    /* border: 2px solid red; */
+
+}
+.col-2 .offer-img{
+    padding: 50px;
+}
+
+small{
+    color: #555;
+}
+
+/* Review Section with three Images and Paras  */
+
+.reviewSection{
+    padding-top: 100px;
+}
+.reviewSection .col-3{
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.reviewSection .col-3:hover{
+    transform: translateY(-10px);
+}
+
+.reviewSection .col-3 img{
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.fa.fa-quote-left{
+    font-size: 34px;
+    color: #ff523b;
+}
+
+.reviewPara{
+    font-size: 12px;
+    margin: 12px 0px;
+    color: #777;
+}
+
+.reviewerName{
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+}
+
+/* Brands Section with five Images  */
+
+.brandsSection{
+    margin: 100px auto;
+
+}
+.col-5{
+    width: 160px;
+}
+
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+
+/* Footer Section with 4 different Columns  */
+
+.footerSection{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0px 20px;
+}
+
+.container{
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} */
+
+.footerSection p{
+    color: #8a8a8a;
+}
+
+.footerSection h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-2{
+    flex : 1;
+    text-align: center;
+}
+
+.footer-col-2 img{
+    width: 175px;
+    margin-bottom: 20px;
+}
+
+.footer-col-3{
+    flex-basis: 12%;
+    text-align: center;
+}
+.footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+.app-logo{
+    margin-top: 20px;
+}
+.app-logo img{
+    width: 140px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0px;
+}
+.copyright{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* All Products.html CSS  */
+
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+
+select{
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+
+select:focus{
+    outline: none;
+}
+
+.page-btn{
+    margin: 0px auto 80px;
+}
+
+.page-btn span{
+    display: inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.page-btn span:hover{
+    background: #ff523b;
+    color: #fff;
+}
+
+/* Single Product Details  */
+.single-product{
+    margin-top: 80px;
+}
+
+.single-product .col-2 img{
+    padding: 0px;
+}
+
+.single-product .col-2{
+    padding: 20px;
+}
+.single-product .col-2 h4{
+    margin: 20px 0px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.single-product select{
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #ff523b;
+}
+
+.single-product input:focus{
+    outline: none;
+}
+
+.single-product .fa{
+    color: #ff523b;
+    margin-left: 10px;
+}
+
+.small-img-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+/* <!-------------------------------- Cart-Item Details  ----------------------------> */
+.cart-page{
+    margin: 80px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #ff523b;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+td{
+    padding: 10px 5px;
+}
+
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a{
+    color: #ff523b;
+    font-size: 12px;
+}
+
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table{
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 400px;
+}
+
+td:last-child{
+    text-align: right;
+}
+
+th:last-child{
+    text-align: right;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 125px;
+}
+.btn-cart{
+    display: flex;
+    justify-content: right;
+    color: #fff;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 30px;
+}
+/* Utility Classes  */
+p{
+    color: #555;
+    font-size: 14px;
+}
+h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0px;
+}

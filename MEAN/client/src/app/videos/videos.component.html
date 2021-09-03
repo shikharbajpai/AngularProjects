@@ -1,0 +1,51 @@
+<!-- On New Video Button Clicked this form appears -->
+<div class="row">
+    <div class="col-sm-9">
+        <div *ngIf="!hidenewVideo">
+            <h3>New Video</h3>
+            <form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" required name="title" ngModel #title="ngModel" minlength="5" maxlength="30">
+                    <div *ngIf="title.errors && (title.dirty || title.touched)" class="alert alert-danger">
+                      <div [hidden]="!title.errors.required">
+                        Video title is required!
+                      </div>
+                      <div [hidden]="!title.errors.minlength">
+                        Title must be at least 5 characters long.
+                      </div>
+                      <div [hidden]="!title.errors.maxlength">
+                        Title cannot be more than 30 characters long.
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Url</label>
+                    <input type="text" class="form-control" required name="url" ngModel #url="ngModel" pattern="https?://.+">
+                    <div *ngIf="url.touched && url.invalid" class="alert alert-danger">
+                      <div *ngIf="url.errors.required">URL is required.</div>
+                      <div *ngIf="url.errors.pattern">Please enter valid url.</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" name="description" ngModel #description="ngModel" required>
+                    <div *ngIf="description.touched && description.invalid" class="alert alert-danger">
+                      <div *ngIf="description.errors.required">Description is required.</div>
+                  </div>
+                </div>
+                <button type="button" class="formButton btn btn-outline-primary" routerLink="/home">&#8592;
+                    Back</button>
+                <button type="submit" class="formButton btn btn-success" [disabled]="!form.valid">Save</button>
+            </form>
+        </div>
+        <app-video-detail *ngIf="selectedVideo && hidenewVideo" [video]="selectedVideo"
+            (updateVideoEvent)="onUpdateVideoEvent($event)" (deleteVideoEvent)="onDeleteVideoEvent($event)">
+        </app-video-detail>
+    </div>
+    <div class="col-sm-3">
+        <button type="button" (click)="newVideo()" class=" newVideo btn btn-success btn-block">+ New
+            Video</button>
+        <video-list (SelectVideo)="onSelectVideo($event)" [videos]="playList"></video-list>
+    </div>
+</div>

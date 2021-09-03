@@ -1,0 +1,17 @@
+.example-card {
+  padding: 30px;
+}
+
+.mat-form-field {
+  width: 50%;
+  min-width: 300px;
+  height: 100px;
+}
+
+.btnDelete {
+  border: 1px solid red;
+}
+
+.span {
+  padding-top: 10px;
+}

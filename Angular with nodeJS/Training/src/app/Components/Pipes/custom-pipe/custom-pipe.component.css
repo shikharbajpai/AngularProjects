@@ -1,0 +1,12 @@
+.brown {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  color: brown;
+}
+.crimson {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  color: crimson;
+}

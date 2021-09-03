@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Guess the Number !</h2>
+  <div class="card bg-light mb-3">
+    <div class="card-body">
+      <p class="card-text">Guess the computer generated random number between 1
+        and 100.</p>
+    </div>
+  </div>
+  <div>
+    <label>Your Guess: </label>
+    <input type="number" [value]="guess" [disabled]="disabled" #userInput style="margin-left: 10px;">
+    <button (click)="verifyGuess(userInput.value)" [disabled]="disabled" class="btn btn-primary btn-sm"
+      style="margin-left: 10px;">Verify</button>
+    <button (click)="initializeGame()" class="btn btn-warning btn-sm" style="margin-left: 10px;">Restart</button>
+  </div>
+  <div>
+    <p *ngIf="deviation<0" class="alert alert-warning">Last guess was too high!</p>
+    <p *ngIf="deviation>0" class="alert alert-warning">Last guess was too low!</p>
+    <p *ngIf="deviation===0" class="alert alert-success">Congratulations! You got it right!</p>
+  </div>
+  <p class="text-info">Previous guesses:</p>
+  <span *ngFor="let g of gusses"> {{g}} </span>
+</div>

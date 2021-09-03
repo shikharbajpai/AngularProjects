@@ -1,0 +1,26 @@
+.title {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.red {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  color: red;
+}
+
+.green {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  color: green;
+}
+
+.blueviolet {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  color: blueviolet;
+}

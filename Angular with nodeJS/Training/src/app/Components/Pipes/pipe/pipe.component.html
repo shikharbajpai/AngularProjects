@@ -1,0 +1,49 @@
+<h1 class="title"> {{title}} </h1>
+<h2> {{defination}} </h2>
+<br>
+
+<h2 class="red">Pipes applicable for String Property</h2>
+
+<h2>1. lowercase Pipe : {{example | lowercase}} </h2>
+<h2>2. uppercase Pipe : {{example | uppercase}} </h2>
+<h2>3. titlecase Pipe : {{example | titlecase}} </h2>
+<h2>4.a. slice Pipe : It takes takes an argument using a colon followed by a number that indicates from where the string
+  has to start Example is : {{example | slice : 3}} </h2>
+<h2>4.b. slice Pipe : It also takes second argument which is the limit Example is : {{example | slice : 3 : 5}} </h2>
+<h2>5. json Pipe : {{person | json}} </h2>
+
+<br>
+
+<h2 class="green">Pipes applicable for Number Property</h2>
+<h2>First one is the minimum number of integer digits.</h2>
+<h2>Second one is the minimum number of decimal digits.</h2>
+<h2>Last one is the maximum number of decimal digits.</h2>
+<h2>1.a. number pipe(1.2-3) : {{9.857 | number:'1.2-3'}}</h2>
+<h2>1.b. number pipe(3.4-5) : {{9.857 | number:'3.4-5'}}</h2>
+<h2>1.c. number pipe(3.1-2) : {{9.857 | number:'3.1-2'}}</h2>
+<h2>3. percent pipe : {{0.25 | percent}}</h2>
+<h2>4.a. currency pipe : {{34 | currency}}</h2>
+<h2>4.b. currency pipe : {{0.78 | currency}}</h2>
+<h2>4.c. currency pipe : It can take country as an argument using ISO country codes Example : {{34 | currency: 'GBP'}}
+</h2>
+<h2>5.d. currency pipe : It can also takes another argument for string 'code' Example : {{34 | currency: 'GBP' :
+  'code'}}
+</h2>
+
+<br>
+
+<h2 class="blueviolet">Pipes applicable for Dates</h2>
+<h2>1. Original Format : {{date}}</h2>
+<h2>2.a. short format : {{date | date: 'short'}}</h2>
+<h2>2.b. shortDate format : {{date | date: 'shortDate'}}</h2>
+<h2>2.c. shortTime format : {{date | date: 'shortTime'}}</h2>
+
+<h2>3.a. medium format : {{date | date: 'medium'}}</h2>
+<h2>3.b. mediumDate format : {{date | date: 'mediumDate'}}</h2>
+<h2>3.c. mediumTime format : {{date | date: 'mediumTime'}}</h2>
+
+<h2>4.a. long format : {{date | date: 'long'}}</h2>
+<h2>4.b. longDate format : {{date | date: 'longDate'}}</h2>
+<h2>4.c. longTime format : {{date | date: 'longTime'}}</h2>
+
+<br>
